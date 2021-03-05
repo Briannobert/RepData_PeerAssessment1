@@ -87,7 +87,7 @@ TotalSteps[, .(Mean_Steps = mean(steps, na.rm = TRUE), MedianSteps = median(step
 
 ```r
 IntervalDT <- ActivityDT[, c(lapply(.SD, mean, na.rm = TRUE)), .SDcols = c("steps"), by = .(interval)] 
-ggplot(IntervalDT, aes(x = interval , y = steps)) + geom_line(color="blue", size=1) + labs(title = "Avg. Daily Steps", x = "Interval", y = "Avg. Steps per day")
+ggplot(IntervalDT, aes(x = interval , y = steps)) + geom_line(color="green", size=1) + labs(title = "Avg. Daily Steps", x = "Interval", y = "Avg. Steps per day")
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-6-1.png)<!-- -->
@@ -160,7 +160,7 @@ TotalSteps[, .(Mean_Steps = mean(steps), MedianSteps = median(steps))]
 ```
 
 ```r
-ggplot(TotalSteps, aes(x = steps)) + geom_histogram(fill = "blue", binwidth = 1000) + labs(title = "Daily Steps", x = "Steps", y = "Frequency")
+ggplot(TotalSteps, aes(x = steps)) + geom_histogram(fill = "pink", binwidth = 1000) + labs(title = "Daily Steps", x = "Steps", y = "Frequency")
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-11-1.png)<!-- -->
